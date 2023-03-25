@@ -30,6 +30,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
           <TextInput
             style={styles.searchInput}
             value={searchTerm}
+            // In rn we dont need to do e.target.value in here we immediately get the value
             onChangeText={(text) => setSearchTerm(text)}
             placeholder="What are you looking for?"
           />
