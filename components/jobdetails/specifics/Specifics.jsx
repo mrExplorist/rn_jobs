@@ -1,14 +1,24 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import { Text, View } from "react-native";
 
-import styles from './specifics.style'
+import React from "react";
+import styles from "./specifics.style";
 
-const Specifics = () => {
+const Specifics = ({ title, points }) => {
   return (
-    <View>
-      <Text>Specifics</Text>
-    </View>
-  )
-}
+    // actully rendering the data about qualifications
+    <View style={styles.container}>
+      <Text style={styles.title}>{title} :</Text>
 
-export default Specifics
+      <View style={styles.pointsContainer}>
+        {points.map((item, index) => (
+          <View style={styles.pointWrapper} key={item + index}>
+            <Text style={styles.pointDot} />
+            <Text style={styles.pointText}>{item}</Text>
+          </View>
+        ))}
+      </View>
+    </View>
+  );
+};
+
+export default Specifics;
